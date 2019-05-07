@@ -64,3 +64,17 @@ $ bin/helmfile sync
 
 # `genrun` generates files from the definitions in `bin/helmfile` and then runs `helmfile` according to the basename of $0(=helmfile)
 ```
+
+In case the command being wrapped by `genrun` must be customized, set `command` in your config file:
+
+```
+#!/usr/bin/env genrun
+
+command:
+- envexec
+- helmfile
+
+files:
+- source: .envrc.gotmpl
+- source: helmfile.yaml.lua
+```
