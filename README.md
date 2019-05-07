@@ -42,3 +42,25 @@ files:
 - source: .genrun/helmfile.yaml.lua
   target: helmfile.yaml
 ```
+
+## Shebang support
+
+`genrun` supports the usage from shebangs. That is, add `genrun` on top of your genrun config file:
+
+`bin/helmfile`:
+
+```
+#!/usr/bin/env genrun
+
+files:
+- source: .envrc.gotmpl
+- source: helmfile.yaml.lua
+```
+
+Now make it an executable so that it behaves as a native commnad:
+
+```
+$ bin/helmfile sync
+
+# `genrun` generates files from the definitions in `bin/helmfile` and then runs `helmfile` according to the basename of $0(=helmfile)
+```
