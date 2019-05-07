@@ -7,6 +7,7 @@ Supports following backends for generating files:
 - Lua 5.1 (powered by [gopher-lua](https://github.com/yuin/gopher-lua)
 - Jsonnet (powered by [go-jsonnet](https://github.com/google/go-jsonnet)
 - Go templates with various datasources (powered by [gomplate](https://github.com/hairyhenderson/gomplate))
+- YAML/JSON/TOML
 
 ## Usage
 
