@@ -1,8 +1,12 @@
 # genrun
 
-Generate some files then run a command.
+Free developers from config-file-format lock-ins.
 
-Supports following backends for generating files:
+---
+
+**gen**run generates some files then **run** a command.
+
+The following fiile generators are supported:
 
 - Lua 5.1 (powered by [gopher-lua](https://github.com/yuin/gopher-lua)
 - Jsonnet (powered by [go-jsonnet](https://github.com/google/go-jsonnet)
