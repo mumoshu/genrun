@@ -15,7 +15,7 @@ Supports following backends for generating files:
 $ genrun Genrunfile -- helmfile sync
 ```
 
-Given the following files, `gnerun` generates the `helmfile.yaml` and `.envrc` according to `Genrunfile`, and then runs `helmfile sync` according to the command-line args after `--`.
+Given the following files, `genrun` generates the `helmfile.yaml` and `.envrc` evaluating Lua and Gomplate code according to `Genrunfile`, and then runs `helmfile sync` according to the command-line args after `--`.
 
 `Genrun.yaml`:
 
