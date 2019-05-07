@@ -49,7 +49,7 @@ files:
 
 `bin/helmfile`:
 
-```
+```yaml
 #!/usr/bin/env genrun
 
 files:
@@ -59,7 +59,7 @@ files:
 
 Now make it an executable so that it behaves as a native commnad:
 
-```
+```console
 $ bin/helmfile sync
 
 # `genrun` generates files from the definitions in `bin/helmfile` and then runs `helmfile` according to the basename of $0(=helmfile)
@@ -67,7 +67,7 @@ $ bin/helmfile sync
 
 In case the command being wrapped by `genrun` must be customized, set `command` in your config file:
 
-```
+```yaml
 #!/usr/bin/env genrun
 
 command:
