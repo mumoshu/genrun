@@ -1,6 +1,12 @@
 # genrun
 
-Generate some files and envvars then run a command.
+Generate some files then run a command.
+
+Supports following backends for generating files:
+
+- Lua 5.1 (powered by [gopher-lua](https://github.com/yuin/gopher-lua)
+- Jsonnet (powered by [go-jsonnet](https://github.com/google/go-jsonnet)
+- Go templates with various datasources (powered by [gomplate](https://github.com/hairyhenderson/gomplate))
 
 ## Usage
 
@@ -14,14 +20,20 @@ Given the following files, `gnerun` generates the `helmfile.yaml` and `.envrc` a
 
 ```yaml
 files:
-- .envrc.gotmpl # generates .envrc by rendering go text/template
-- helmfile.yaml.lua # generates helmfile.yaml by evaluating the lua script
+- source: .envrc.gotmpl # generates .envrc by rendering go text/template
+- source: helmfile.yaml.lua # generates helmfile.yaml by evaluating the lua script
 
-## Alternative syntax
+## Advanced configuration
 
 files:
 - source: .genrun/.envrc.gotmpl
   target: .envrc
+  datasources:
+  - name: cities
+    url: env:///CITIES?type=application/yaml
+  - name: weather
+    url: https://wttr.in/?0
+    header: "weather=User-Agent: curl"
 - source: .genrun/helmfile.yaml.lua
   target: helmfile.yaml
 ```
