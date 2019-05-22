@@ -78,3 +78,8 @@ files:
 - source: .envrc.gotmpl
 - source: helmfile.yaml.lua
 ```
+
+## Prior Arts
+
+- [gofish](https://github.com/fishworks/gofish) uses Lua as its package definition language
+- [luacfg](https://github.com/hyqhyq3/common/blob/master/luacfg/luacfg.go) uses Lua to import the last value in a Lua script as a golang value
